@@ -1,5 +1,13 @@
-# Employee Class in Python  
+# Employee in Python  
 Patrick Schubert, April 2018
+
+This project demonstrates an Employee class in Python. The following files are in this project:  
+
+* employee.py - the Employee class.
+* employee_demo.py - a demo of Employee, which creates a bunch of employees and prints their info.
+* test_employee.py - tests for the Employee class.
+* README.md - this file.
+
 
 ## Employee Class
 ### Types
