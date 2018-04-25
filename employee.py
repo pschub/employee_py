@@ -2,6 +2,7 @@
 # This file contains the Employee class and the EmployeeType enum.
 
 from enum import Enum
+from math import floor
 
 class EmployeeType(Enum):
     """ Describes employee types (Fulltime, contractor, temp). """
@@ -41,4 +42,5 @@ class Employee:
         """ Return the number of vacation days the employee has accrued."""
         if (self.etype != EmployeeType.FULLTIME):
             return 0
-        return self.years * self.VACATION_DAYS_PER_YEAR
+        return floor(self.years) * self.VACATION_DAYS_PER_YEAR
+

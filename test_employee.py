@@ -3,6 +3,7 @@
 
 import unittest
 from employee import Employee, EmployeeType
+from math import floor
 
 
 class NameTests(unittest.TestCase):
@@ -48,26 +49,26 @@ class ETypeTests(unittest.TestCase):
             Employee("Jane", "foo")
 
 
-class VactionTests(unittest.TestCase):
+class VacationTests(unittest.TestCase):
     """ Tests related to number of vacation days. """
 
     VDAYS_PER_YEAR = 5
 
     def test_newFulltime(self):
         years = 0
-        expected = self.VDAYS_PER_YEAR * years
+        expected = self.VDAYS_PER_YEAR * floor(years)
         person = Employee("Jane", EmployeeType.FULLTIME, years)
         self.assertEqual(expected, person.getVacation())
 
     def test_seasonedFulltime(self):
         years = 11
-        expected = self.VDAYS_PER_YEAR * years
+        expected = self.VDAYS_PER_YEAR * floor(years)
         person = Employee("Jane", EmployeeType.FULLTIME, years)
         self.assertEqual(expected, person.getVacation())
 
     def test_fractionalVacation(self):
         years = 0.711
-        expected = self.VDAYS_PER_YEAR * years
+        expected = self.VDAYS_PER_YEAR * floor(years)
         person = Employee("Joe", EmployeeType.FULLTIME, years)
         self.assertEqual(expected, person.getVacation())
 
